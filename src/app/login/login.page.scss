@@ -1,0 +1,22 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 16px;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 24px;
+}
+
+.forgot-link {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.login-btn {
+  margin-top: 24px;
+}

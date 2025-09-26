@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Create Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="register-container ion-padding">
+  <div class="logo-container">
+    <img src="assets/serenity mind.jpeg" alt="Yoga Logo" class="register-logo" />
+  </div>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <ion-item lines="inset">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="submitted && f['email'].errors?.['required']">Email is required</ion-note>
+
+    <ion-item lines="inset">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="submitted && f['password'].errors?.['required']">Password is required</ion-note>
+
+    <ion-button expand="block" type="submit" class="email-btn">Register with Email</ion-button>
+  </form>
+
+  <ion-text class="divider">OR</ion-text>
+
+  <ion-button expand="block" color="medium" fill="outline" (click)="registerWithMobile()">
+    <ion-icon name="call" slot="start"></ion-icon>
+    Register with Mobile OTP
+  </ion-button>
+
+  <ion-button expand="block" color="danger" fill="outline" (click)="registerWithGoogle()">
+    <ion-icon name="logo-google" slot="start"></ion-icon>
+    Register with Google
+  </ion-button>
+
+  <ion-button expand="block" color="dark" fill="outline" (click)="registerWithApple()">
+    <ion-icon name="logo-apple" slot="start"></ion-icon>
+    Register with Apple
+  </ion-button>
+
+  <div class="login-link" (click)="goToLogin()">
+    <a>Already have an account? Login</a>
+  </div>
+</ion-content>

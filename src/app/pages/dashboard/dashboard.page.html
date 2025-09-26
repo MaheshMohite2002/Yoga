@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Yoga Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="yoga-grid">
+    <ion-row>
+      <ion-col size="6" *ngFor="let yoga of yogaCategories">
+        <ion-card button (click)="navigateToSubCategory(yoga.route)" class="yoga-card">
+          <ion-card-content>
+            <img [src]="yoga.image" class="yoga-img" />
+            <h2 class="yoga-title">{{ yoga.name }}</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

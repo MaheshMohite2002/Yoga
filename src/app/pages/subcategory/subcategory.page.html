@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ categoryTitle }} Subcategories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="subcategories">
+    <ion-item *ngFor="let sub of subcategories" [routerLink]="['/subcategory-details', categoryKey, sub]">
+      {{ sub }}
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="!subcategories">
+    <p class="ion-text-center">No subcategories found.</p>
+  </div>
+</ion-content>

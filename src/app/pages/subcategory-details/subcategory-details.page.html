@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ subcategory }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <img [src]="imageUrl" *ngIf="imageUrl" />
+    <ion-card-header>
+      <ion-card-title>{{ subcategory }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <audio #audioPlayer *ngIf="audioUrl" [src]="audioUrl"></audio>
+
+      <div class="counter">
+        <ion-item>
+          <ion-label position="floating">Enter Repeat Count</ion-label>
+          <ion-input
+            type="number"
+            [(ngModel)]="targetCount"
+            placeholder="e.g., 4"
+            (keyup.enter)="startAutoPlay()"
+          ></ion-input>
+        </ion-item>
+        <p>Times Played: {{ counter }}</p>
+      </div>
+
+      <p>{{ description }}</p>
+
+      <div class="buy-now" style="margin-top: 20px; text-align: center;">
+        <ion-button color="primary">Buy Now - ₹999/year</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

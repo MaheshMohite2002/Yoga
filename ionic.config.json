@@ -1,0 +1,7 @@
+{
+  "name": "Yoga Application",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

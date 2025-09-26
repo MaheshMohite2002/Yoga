@@ -1,0 +1,34 @@
+<ion-content>
+  <div class="login-container">
+    <img src="assets/serenity mind.jpeg" alt="Yoga Admin Logo" class="logo" />
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="submitted && f['email'].errors?.['required']">Email is required</ion-note>
+      <ion-note color="danger" *ngIf="submitted && f['email'].errors?.['email']">Invalid email</ion-note>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="submitted && f['password'].errors?.['required']">Password is required</ion-note>
+
+      <ion-button expand="block" type="submit" class="login-btn">Login</ion-button>
+
+      <div class="forgot-link" (click)="goToForgotPassword()">
+        <a>Forgot Password?</a>
+      </div>
+
+      <div class="register-link" (click)="goToRegister()">
+        <a>Don't have an account? Register</a>
+      </div>
+
+      <ion-text color="danger" *ngIf="errorMessage">
+        <p class="ion-padding">{{ errorMessage }}</p>
+      </ion-text>
+    </form>
+  </div>
+</ion-content>

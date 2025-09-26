@@ -1,0 +1,42 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-logo {
+  max-width: 140px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.email-btn {
+  margin-top: 20px;
+}
+
+ion-button {
+  margin-top: 12px;
+}
+
+.divider {
+  display: block;
+  text-align: center;
+  margin: 16px 0;
+  font-weight: 500;
+  color: #666;
+}
+
+.login-link {
+  margin-top: 24px;
+  text-align: center;
+
+  a {
+    color: #3880ff;
+    font-weight: 500;
+  }
+}

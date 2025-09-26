@@ -1,0 +1,66 @@
+ion-content {
+  --background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+ion-toolbar {
+  --background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  --color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+ion-list {
+  background: transparent;
+  margin-top: 20px;
+}
+
+ion-item {
+  --background: #ffffff;
+  --border-radius: 16px;
+  margin: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6a4e42;
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+  border: 1px solid rgba(106, 78, 66, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+ion-item:hover,
+ion-item:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+ion-item:active {
+  transform: scale(0.98);
+}
+
+p.ion-text-center {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #8b6f60;
+  margin-top: 40px;
+}
+
+/* Smooth fade-in animation for the list */
+ion-item {
+  animation: fadeInUp 0.4s ease forwards;
+}
+ion-item:nth-child(1) { animation-delay: 0.05s; }
+ion-item:nth-child(2) { animation-delay: 0.1s; }
+ion-item:nth-child(3) { animation-delay: 0.15s; }
+/* ...you can continue increasing delay for more items */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
